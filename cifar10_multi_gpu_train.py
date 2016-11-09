@@ -177,7 +177,7 @@ def train():
     for grad, var in grads:
       if grad is not None:
         summaries.append(tf.histogram_summary(
-          var.op.nam + '/gradients', grad))
+          var.op.name + '/gradients', grad))
 
     # Apply the gradients to adjust the shared variables
     apply_gradient_op = opt.apply_gradients(grads, global_step=global_step)
