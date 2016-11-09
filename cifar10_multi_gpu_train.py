@@ -117,7 +117,7 @@ def average_gradients(tower_grads):
     # Return the first tower's pointer to the variable
     v = grad_and_vars[0][1]
     grad_and_var = (grad, v)
-    average_grads.appe(grad_and_var)
+    average_grads.append(grad_and_var)
   return average_grads
 
 def train():
