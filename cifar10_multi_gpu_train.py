@@ -189,7 +189,7 @@ def train():
     # Track the moving averages of all trainable variables
     variable_averages = tf.train.ExponentialMovingAverage(
       cifar10.MOVING_AVERAGE_DECAY, global_step)
-    variables_averages_op = variable_averages.apply(tr.trainable_variables)
+    variables_averages_op = variable_averages.apply(tf.trainable_variables())
 
     # Group all updates into a single train op
     train_op = tf.group(apply_gradient_op, variables_averages_op)
